@@ -1,0 +1,525 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+body {
+    background: url(../imgaes/index.jpg) no-repeat;
+    background-size: contain;
+    font-size: 14px;
+    font-family: '微软雅黑';
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-color: #666666;
+    background-origin: padding-box;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.hb-box {
+    position: absolute;
+    left: 50%;
+    margin-left: -190px;
+    top: 24%;
+    z-index: 20;
+    opacity: 0;
+    transform: scale(0.7, 0.7)
+}
+
+.hb_bg1 {
+    position: absolute;
+    z-index: 10;
+}
+
+.hb_bg2 {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    z-index: 10
+}
+
+.hb_bg3 {
+    position: absolute;
+    left: 26px;
+    top: -90px;
+    z-index: 8
+}
+
+.lottery-img {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    text-align: center;
+    opacity: 0;
+}
+
+.bottom-fex {
+    width: 100%;
+    height: 490px;
+    background: url(../imgaes/index2.png) repeat-x center bottom;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    background-size: contain
+}
+
+.car-monkey {
+    position: absolute;
+    left: 300px;
+    bottom: 23%;
+    z-index: 8;
+    width: 421px;
+}
+
+.monkey {
+    position: absolute;
+    left: 160px;
+    bottom: 90px;
+    z-index: 7;
+}
+
+.car {
+    position: absolute;
+    z-index: 8;
+    bottom: -100px;
+}
+
+.wheel-1 {
+    position: absolute;
+    bottom: 35px;
+    left: 33px;
+}
+
+.wheel-2 {
+    position: absolute;
+    bottom: 33px;
+    right: 67px;
+}
+
+
+/*****车子***/
+
+.car-monkey {
+    animation-name: car;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.red {
+    position: absolute;
+    left: 0;
+    bottom: 350px;
+    z-index: 5;
+    opacity: 0;
+}
+
+.red img {
+    position: absolute;
+}
+
+.red-1 {}
+
+.name-box {
+    width: 450px;
+    background-color: #fff;
+    height: 300px;
+    position: absolute;
+    left: 44px;
+    top: 70px;
+    z-index: 9;
+    border-radius: 20px;
+}
+
+.name-ul li {
+    text-align: center;
+    font-size: 50px;
+    position: relative;
+    padding-top: 40px;
+}
+
+.name-ul li span {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-top: 14%;
+    color: #da3932;
+}
+
+.red-2 {
+    position: absolute;
+    left: 500px;
+}
+
+.monkey {
+    animation-name: monkey;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    /*-webkit-animation:monkey 10s ease-in-out 0s infinite;*/
+}
+
+.show {
+    display: none;
+}
+
+
+/*车轮*/
+
+.wheel_ad {
+    animation-name: car_wheel_ad;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.name_p_a {
+    opacity: 0;
+}
+
+.red {
+    animation-name: redIimg;
+    animation-duration: 1.3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+
+/*红包*/
+
+.red .red-1 {
+    -webkit-animation: redIrotate 0.4s ease-in 0.1s infinite;
+}
+
+.red .red-2 {
+    -webkit-animation: redIrotate 0.4s ease-in 0.4s infinite;
+}
+
+.hb-aWown {
+    animation-name: hb;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.hb-aUp {
+    animation-name: hb_up;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.h2-a {
+    animation-name: h2;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+/*中奖人名*/
+
+.name-a {
+    animation-name: namebox;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.name_p_a {
+    animation-name: name_p;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    display: inline;
+    padding: 0 10px;
+}
+
+.lottery-ad {
+    animation-name: lottery_ad;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes lottery_ad {
+    0% {
+        opacity: 0;
+        transform: scale(0.1, 0.1)
+    }
+    20% {
+        opacity: 0.2;
+        transform: scale(0.2, 0.2)
+    }
+    40% {
+        opacity: 0.4;
+        transform: scale(0.4, 0.4)
+    }
+    60% {
+        opacity: 0.6;
+        transform: scale(0.6, 0.6)
+    }
+    80% {
+        opacity: 0.8;
+        transform: scale(0.8, 0.8)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1)
+    }
+}
+
+@-webkit-keyframes car_wheel_ad {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes name_p {
+    0% {
+        opacity: 0;
+        transform: scale(0.1, 0.1)
+    }
+    20% {
+        opacity: 0.2;
+        transform: scale(0.2, 0.2)
+    }
+    40% {
+        opacity: 0.4;
+        transform: scale(0.4, 0.4)
+    }
+    60% {
+        opacity: 0.6;
+        transform: scale(0.6, 0.6)
+    }
+    80% {
+        opacity: 0.8;
+        transform: scale(0.8, 0.8)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1)
+    }
+}
+
+@keyframes namebox {
+    0% {
+        top: 70px
+    }
+    20% {
+        top: 0px
+    }
+    40% {
+        top: -30px
+    }
+    60% {
+        top: -60px
+    }
+    80% {
+        top: -90px
+    }
+    100% {
+        top: -160px
+    }
+}
+
+@keyframes h2 {
+    0% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0.0;
+    }
+}
+
+@keyframes hb {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+        top: -120%;
+    }
+    50% {
+        opacity: 0.8;
+        top: -60%;
+    }
+    75% {
+        opacity: 1;
+        top: -30%;
+    }
+    100% {
+        opacity: 1;
+        top: 42%;
+    }
+}
+
+@keyframes redIrotate {
+    25% {
+        -webkit-transform: rotate(45deg);
+    }
+    50% {
+        -webkit-transform: rotate( 90deg);
+    }
+    75% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes redIimg {
+    0% {
+        opacity: 0;
+        transform: scale(0.8, 0.8);
+        /*transform:rotate(360deg); */
+    }
+    20% {
+        opacity: 0.2;
+        transform: scale(0.8, 0.8);
+        bottom: 50px;
+    }
+    40% {
+        opacity: 0.5;
+        transform: scale(0.8, 0.8);
+        bottom: 100px;
+    }
+    60% {
+        opacity: 0.7;
+        transform: scale(0.8, 0.8);
+        bottom: 300px;
+    }
+    80% {
+        opacity: 0.9;
+        transform: scale(0.8, 0.8);
+        bottom: 500px;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+        bottom: 700px;
+    }
+}
+
+@keyframes car {
+    0% {
+        left: 0%
+    }
+    10% {
+        left: 10%
+    }
+    20% {
+        left: 20%
+    }
+    30% {
+        left: 30%
+    }
+    40% {
+        left: 40%
+    }
+    50% {
+        left: 50%
+    }
+    60% {
+        left: 60%
+    }
+    70% {
+        left: 70%
+    }
+    80% {
+        left: 80%
+    }
+    90% {
+        left: 90%
+    }
+    100% {
+        left: 100%
+    }
+}
+
+@keyframes monkey {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    10% {
+        -webkit-transform: rotate(-5deg);
+    }
+    20% {
+        -webkit-transform: rotate(-8deg);
+    }
+    30% {
+        -webkit-transform: rotate(-5deg);
+    }
+    40% {
+        -webkit-transform: rotate(0);
+    }
+    50% {
+        -webkit-transform: rotate(5deg);
+    }
+    60% {
+        -webkit-transform: rotate(8deg);
+    }
+    70% {
+        -webkit-transform: rotate(5deg);
+    }
+    80% {
+        -webkit-transform: rotate(0);
+    }
+    90% {
+        -webkit-transform: rotate(-5deg);
+    }
+    100% {
+        -webkit-transform: rotate(0);
+    }
+}
+
+.namelist {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    height: 126px;
+    overflow: hidden;
+}
