@@ -3,18 +3,67 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>抽奖活动</title>
+    <title>SAFS圣诞抽奖大活动</title>
     <link type="text/css" rel="stylesheet" href="css/weather.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="js/snow.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <style type="text/css">
+        body{
+            position: relative;
+        }
+        .prizePanel{
+            width: 600px;
+            height: 400px;
+            border-radius: 5px;
+            border: 1px solid #76C0E7;
+            background: #76C0E7;
+            position: absolute;
+            top:  40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 4px 4px 9px #76C0DF;
+            background-color:rgba(118,192,223,0.5);
+        }
+        .prizePanel{
+            z-index: 99
+        }
+        .child{
+            position: absolute;
+            z-index: 9999
+        }
+        .numberNN{
+            font-size: 90px;
+            color: #fff;
+            opacity: 1;
+            text-align: center;
+        }
+        .title{
+            width: 600px;
+            display: block;
+            text-align: center;
+            color: #fff;
+        }
+        .panelBtn{
+            width: 600px;
+            display: block;
+            text-align: center;
+        }
+        .selectedNum{
+            width: 600px;
+            display: block;
+            text-align: center;        
+        }
+        .button{
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <div id="leafContainer">
     </div>
-    <div class="hb-box">
+<!--     <div class="hb-box">
         <div class="hb_bg1">
             <div class="namelist"></div>
             <img src="imgaes/qianbao1.png" alt="">
@@ -27,29 +76,57 @@
         </div>
         <div class="hb_bg2"><img src="imgaes/qianbao2.png" alt=""></div>
         <div class="hb_bg3"><img src="imgaes/qianbao3.png" alt=""></div>
-    </div>
+    </div> -->
     <div class="lottery-img"><img src="imgaes/sandengjiang.png" alt=""></div>
-    <div class="car-monkey">
+<!--     <div class="car-monkey">
         <div class="monkey"><img src="imgaes/hou.png" alt=""></div>
         <div class="car">
             <img src="imgaes/che.png" alt="">
         </div>
-    </div>
-    <div style="display:none">
-        <input type="button" value="获奖名单" id="zhf">
-        <div id="Winner" class="show">
-            特等奖：
-            <div id="first"></div>
-            一等奖：
-            <div id="two"></div>
-            二等奖：
-            <div id="three"></div>
-            三等奖：
-            <div id="four"></div>
-        </div>
-    </div>
+    </div> -->
+    
     <!---底部-->
     <div class="bottom-fex " style=""></div>
+    <div class="prizePanel">
+        <div class="child">
+            <h1 class="title">【SAFS】2017年度圣诞抽奖</h1>
+            <div class="panelBtn">
+                <div class="start button pink brackets">抽奖</div>
+                <div class="end button blue brackets">停止</div>   
+            </div>
+            <div class="numberNN"></div> 
+            <div class="selectedNum">
+                <div>已抽中的奖品：</div>
+            </div>
+        </div>
+    </div>
 </body>
-
+<script type="text/javascript">
+    var number = [];
+    var selectedNum = [];
+    for(var i =0 ; i < 15; i++){
+        number.push(i);
+    }
+    var timer;
+    $(".start").on("click",function(){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            $(".numberNN").html(number[Math.floor(Math.random()*number.length)]);
+        },50);
+    });
+    $(".end").on("click",function(){
+        clearInterval(timer);
+        number.remove(parseInt($(".numberNN").html()));
+        $(".selectedNum").append('<span>'+ $(".numberNN").html() + '，</span>')
+        if (number.length == 0) {
+            alert("活动结束")
+        }
+    });
+    Array.prototype.remove = function(val) {
+        var index = this.indexOf(val);
+        if (index > -1) {
+        this.splice(index, 1);
+        }
+    };
+</script>
 </html>
