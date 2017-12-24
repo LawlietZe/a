@@ -57,6 +57,14 @@
         .button{
             cursor: pointer;
         }
+        .selectedNum{
+            font-size: 20px !important;
+            color: #fff;
+        }
+        .listcontainer{
+            max-height: 122px;
+            overflow: auto;
+        }
     </style>
 </head>
 
@@ -97,6 +105,7 @@
             <div class="numberNN"></div> 
             <div class="selectedNum">
                 <div>已抽中的奖品：</div>
+                <div class="listcontainer"></div>
             </div>
         </div>
     </div>
@@ -104,28 +113,34 @@
 <script type="text/javascript">
     var number = [];
     var selectedNum = [];
-    for(var i =0 ; i < 15; i++){
+    for(var i = 0 ; i < 150; i++){
         number.push(i);
     }
+    var flag = false;
     var timer;
     $(".start").on("click",function(){
+        flag = true;
         clearInterval(timer);
         timer = setInterval(function(){
             $(".numberNN").html(number[Math.floor(Math.random()*number.length)]);
         },50);
     });
     $(".end").on("click",function(){
-        clearInterval(timer);
-        number.remove(parseInt($(".numberNN").html()));
-        $(".selectedNum").append('<span>'+ $(".numberNN").html() + '，</span>')
-        if (number.length == 0) {
-            alert("活动结束")
+        if (flag) {
+            clearInterval(timer);
+            number.remove(parseInt($(".numberNN").html()));
+            $(".listcontainer").append('<span>'+ $(".numberNN").html() + '，</span>')
+            $('.listcontainer').scrollTop( $('.listcontainer')[0].scrollHeight );
+            if (number.length == 0) {
+                alert("活动结束")
+            }            
         }
+        flag = false;
     });
     Array.prototype.remove = function(val) {
         var index = this.indexOf(val);
         if (index > -1) {
-        this.splice(index, 1);
+            this.splice(index, 1);
         }
     };
 </script>
